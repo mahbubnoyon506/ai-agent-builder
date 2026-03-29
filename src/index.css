@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Geist+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-amber: 38 92% 50%;
+    --color-purple: 265 75% 70%;
+    --color-green: 162 72% 48%;
+}
+
+@layer base {
+    :root {
+        --background: 220 14% 8%;
+        --foreground: 220 10% 92%;
+        --card: 220 14% 11%;
+        --card-foreground: 220 10% 92%;
+        --popover: 220 14% 11%;
+        --popover-foreground: 220 10% 92%;
+        --primary: 214 100% 65%;
+        --primary-foreground: 220 14% 8%;
+        --secondary: 220 14% 16%;
+        --secondary-foreground: 220 10% 70%;
+        --muted: 220 14% 14%;
+        --muted-foreground: 220 10% 48%;
+        --accent: 162 72% 48%;
+        --accent-foreground: 220 14% 8%;
+        --destructive: 0 72% 60%;
+        --destructive-foreground: 220 10% 92%;
+        --border: 220 14% 18%;
+        --input: 220 14% 16%;
+        --ring: 214 100% 65%;
+        --radius: 0.6rem;
+    }
+
+    * {
+        box-sizing: border-box;
+        border-color: hsl(var(--border));
+    }
+
+    html,
+    body,
+    #root {
+        height: 100%;
+        background: hsl(var(--background));
+        font-family: 'Syne', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background: hsl(var(--primary) / 0.3);
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: hsl(var(--border));
+        border-radius: 999px;
+    }
+}
