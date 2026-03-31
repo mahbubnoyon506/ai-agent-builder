@@ -3,8 +3,6 @@ import { Hexagon } from "lucide-react";
 import { ConfigPanel } from "@/components/builder/ConfigPanel";
 import { PreviewPanel } from "@/components/builder/PreviewPanel";
 import { SavedAgentsGrid } from "@/components/builder/SavedAgentsGrid";
-import { Separator } from "@/components/ui/separator";
-// import { useDraftStore } from "@/store/agentStore";
 import type { AgentData } from "@/types";
 import { useDraftStore } from "./store/agentStore";
 
@@ -76,14 +74,13 @@ export default function App() {
 
       <main className="flex flex-1 flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          <div className="flex flex-col min-h-[520px]">
+          <div className="flex flex-col min-h-130">
             <ConfigPanel onReload={fetchAPI} />
           </div>
-          <div className="flex flex-col min-h-[520px]">
+          <div className="flex flex-col min-h-130">
             <PreviewPanel />
           </div>
         </div>
-        <Separator />
         <SavedAgentsGrid />
       </main>
 

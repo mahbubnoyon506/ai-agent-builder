@@ -3,10 +3,10 @@ import { Trash2, Upload, Bot, Layers, Zap, BrainCircuit } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-// import { useDraftStore, useSavedStore } from "@/store/agentStore";
 import type { SavedAgent } from "@/types";
 import { cn } from "@/lib/utils";
 import { useDraftStore, useSavedStore } from "@/store/agentStore";
+import { Separator } from "../ui/separator";
 
 const PROVIDER_COLORS: Record<string, string> = {
   Claude:
@@ -135,31 +135,36 @@ export function SavedAgentsGrid() {
   if (savedAgents.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Bot size={18} className="text-[hsl(var(--primary))]" />
-          <h2 className="font-bold text-base tracking-tight">Saved Agents</h2>
-          <Badge>{savedAgents.length}</Badge>
+    <>
+      <Separator />
+      <section className="flex flex-col gap-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Bot size={18} className="text-[hsl(var(--primary))]" />
+            <h2 className="text-[hsl(var(--secondary-foreground))] font-bold text-base tracking-tight">
+              Saved Agents
+            </h2>
+            <Badge>{savedAgents.length}</Badge>
+          </div>
+          <Button
+            variant="destructive"
+            size="sm"
+            onClick={() => {
+              if (confirm("Clear all saved agents?")) clearAll();
+            }}
+            className="text-xs gap-1.5"
+          >
+            <Trash2 size={12} />
+            Clear all
+          </Button>
         </div>
-        <Button
-          variant="destructive"
-          size="sm"
-          onClick={() => {
-            if (confirm("Clear all saved agents?")) clearAll();
-          }}
-          className="text-xs gap-1.5"
-        >
-          <Trash2 size={12} />
-          Clear all
-        </Button>
-      </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {savedAgents.map((agent) => (
-          <AgentCard key={agent.id} agent={agent} />
-        ))}
-      </div>
-    </section>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {savedAgents.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

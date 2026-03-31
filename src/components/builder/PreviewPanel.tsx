@@ -93,7 +93,7 @@ export function PreviewPanel() {
             <Label>Profile</Label>
           </div>
           {selectedProfileObj ? (
-            <div className="rounded-[var(--radius)] border border-[hsl(var(--primary)/0.25)] bg-[hsl(var(--primary)/0.06)] px-3 py-2">
+            <div className="rounded-(--radius) border border-[hsl(var(--primary)/0.25)] bg-[hsl(var(--primary)/0.06)] px-3 py-2">
               <p className="text-sm font-semibold text-[hsl(var(--foreground))]">
                 {selectedProfileObj.name}
               </p>
