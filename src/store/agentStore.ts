@@ -3,16 +3,14 @@ import { persist } from "zustand/middleware";
 import type { AgentData, SavedAgent } from "@/types";
 import { uid } from "@/lib/utils";
 
-// ─── Builder draft state (not persisted) ──────────────────────────────────────
-
 interface DraftState {
   data: AgentData | null;
   loading: boolean;
   error: string | null;
 
   selectedProfile: string;
-  selectedSkills: string[]; // ordered list — drag-and-drop changes order
-  selectedLayers: string[]; // ordered list — drag-and-drop changes order
+  selectedSkills: string[];
+  selectedLayers: string[];
   selectedProvider: string;
   agentName: string;
 
@@ -92,8 +90,6 @@ export const useDraftStore = create<DraftState>()((set) => ({
       agentName: "",
     }),
 }));
-
-// ─── Saved agents state (persisted to localStorage) ───────────────────────────
 
 interface SavedState {
   savedAgents: SavedAgent[];
