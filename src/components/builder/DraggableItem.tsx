@@ -89,7 +89,7 @@ export function DraggableItem({
       {/* Remove button */}
       <button
         onClick={() => onRemove(id)}
-        className="p-0.5 rounded opacity-50 hover:opacity-100 transition-opacity"
+        className="cursor-pointer p-0.5 rounded opacity-50 hover:opacity-100 transition-opacity"
         aria-label={`Remove ${label}`}
       >
         <X size={13} />
