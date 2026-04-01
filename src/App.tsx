@@ -48,19 +48,21 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-[hsl(var(--background))]">
       <header className="sticky top-0 z-20 flex items-center justify-between border-b border-[hsl(var(--border))] bg-[hsl(var(--card)/0.8)] px-6 py-3.5 backdrop-blur-md">
-        <div className="flex items-center gap-3">
-          <Hexagon
-            size={26}
-            className="text-[hsl(var(--primary))] drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
-            strokeWidth={1.5}
-          />
-          <div>
-            <h1 className="text-lg font-bold tracking-tight leading-none text-emerald-600">
-              Agent Builder
-            </h1>
-            <p className="text-[10px] uppercase tracking-widest text-[hsl(var(--muted-foreground))] mt-0.5">
-              Compose intelligent AI profiles
-            </p>
+        <div className="max-w-7xl mx-auto w-full xl:px-6">
+          <div className="flex items-center gap-3">
+            <Hexagon
+              size={26}
+              className="text-[hsl(var(--primary))] drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
+              strokeWidth={1.5}
+            />
+            <div>
+              <h1 className="text-lg font-bold tracking-tight leading-none text-emerald-600">
+                Agent Builder
+              </h1>
+              <p className="text-[10px] uppercase tracking-widest text-[hsl(var(--muted-foreground))] mt-0.5">
+                Compose intelligent AI profiles
+              </p>
+            </div>
           </div>
         </div>
         <div
